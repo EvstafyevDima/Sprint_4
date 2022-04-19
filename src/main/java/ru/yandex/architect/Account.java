@@ -9,9 +9,14 @@ public class Account {
 
     public boolean checkNameToEmboss() {
 
+        if (name == null) {
+                return false;
+            }
+
         int count = name.length(); // Подсчет количество знаков
-        Boolean isNoSpaceAtTheBeginning = !name.startsWith(" ");// нет пробела в начале
-        Boolean isNoSpaceAtTheEnd = !name.endsWith(" "); // нет пробела в конце
+        boolean isNoSpaceAtTheBeginning = !name.startsWith(" ");// нет пробела в начале
+        boolean isNoSpaceAtTheEnd = !name.endsWith(" "); // нет пробела в конц
+
 
         if(count >= 3 && count <= 19 && isNoSpaceAtTheBeginning  && isNoSpaceAtTheEnd){
 
@@ -28,10 +33,9 @@ public class Account {
                 return true;
             }
 
-            else {
+
                 System.out.println("false!");
                 return false;
-            }
         }
 
         return false;
